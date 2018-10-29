@@ -4,5 +4,15 @@
   "main": "index.js",
   "repository": "https://github.com/Kevnien/Notes-Back-End.git",
   "author": "<kevinn858@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.5",
+    "supertest": "^3.3.0"
+  },
+  "scripts": {
+    "test": "jest --watch --verbose",
+    "start": "nodemon"
+  }
 }
