@@ -30,4 +30,33 @@ server.post('/api/notes', (req, res) => {
         .catch(err => res.status(400).json(err.message));
 });
 
+server.get('/api/notes/:id', (req, res) => {
+    const {id} = req.params;
+    db('notes').where({id}).first()
+        .then(note => {
+            res.status(200).json(note);
+        })
+        .catch(err => res.status(400).json(err.message));
+});
+
+server.put('/api/notes/:id', (req, res) => {
+    const {id} = req.params;
+    const {title, content} = req.body;
+    const note = {title, content};
+    db('notes').where({id}).update(note)
+        .then(boolean => {
+            res.status(200).json(boolean);
+        })
+        .catch(err => res.status(400).json(err.message));
+});
+
+server.delete('/api/notes/:id', (req, res) => {
+    const {id} = req.params;
+    db('notes').where({id}).delete()
+        .then(boolean => {
+            res.status(200).json(boolean);
+        })
+        .catch(err => status(400).json(err.message));
+});
+
 module.exports = server;
