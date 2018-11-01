@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const knex = require('knex');
+const knex = require('./data/config.js');
 const knexConfig = require('./knexfile.js');
 const db = knex(knexConfig.development);
 const cors = require('cors');
