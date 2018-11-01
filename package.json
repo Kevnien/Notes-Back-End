@@ -16,6 +16,6 @@
   },
   "scripts": {
     "test": "jest --watch --verbose",
-    "start": "nodemon"
+    "start": "node index.js"
   }
 }
